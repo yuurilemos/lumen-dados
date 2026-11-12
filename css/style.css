@@ -1,0 +1,181 @@
+/* ---------- 1. CORES (variÃ¡veis) ---------- */
+:root {
+  --marinho: #0b2545;
+  --ambar:   #f5b700;
+  --verde:   #0f766e;
+  --texto-botao-verde: #ffffff;
+
+  --fundo:   #ffffff;
+  --fundo-2: #f8f9fa;
+  --texto:   #212529;
+  --borda:   #ced4da;
+}
+
+/* Modo escuro: o JavaScript coloca data-tema="escuro" no <html> */
+[data-tema="escuro"] {
+  --verde:   #5eead4;
+  --texto-botao-verde: #04201d;
+
+  --fundo:   #212529;
+  --fundo-2: #2b3035;
+  --texto:   #dee2e6;
+  --borda:   #6c757d;
+}
+
+
+/* ---------- 2. BASE ---------- */
+html { font-size: calc(16px * var(--fonte, 1)); }
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.6;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+a { color: var(--verde); }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { line-height: 1.2; }
+
+/* Foco visÃ­vel para quem usa teclado */
+:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; }
+
+
+/* ---------- 3. LAYOUT ---------- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+.container.estreito { max-width: 600px; }
+
+.secao { padding: 3rem 0; }
+.secao.cinza { background: var(--fundo-2); }
+
+/* .linha organiza os itens em colunas que se ajustam Ã  largura da tela */
+.linha {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+
+/* ---------- 4. COMPONENTES ---------- */
+
+/* BotÃµes */
+.botao {
+  display: inline-block;
+  padding: .5rem 1rem;
+  border: 2px solid var(--borda);
+  border-radius: .4rem;
+  background: transparent;
+  color: var(--texto);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+.botao.verde  { background: var(--verde); border-color: var(--verde); color: var(--texto-botao-verde); }
+.botao.ambar  { background: var(--ambar); border-color: var(--ambar); color: var(--marinho); font-weight: bold; }
+.botao.grande { padding: .75rem 1.5rem; font-size: 1.15rem; }
+.botao.pequeno { padding: .2rem .6rem; font-size: .9rem; }
+
+/* CartÃµes */
+.cartao {
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: .5rem;
+  padding: 1rem;
+}
+.cartao h3 { margin-top: 0; }
+.cartao.passo { border-left: 5px solid var(--ambar); }
+
+/* Abas */
+.abas { display: flex; gap: .25rem; border-bottom: 2px solid var(--borda); }
+.abas button {
+  padding: .5rem 1rem;
+  border: none;
+  background: none;
+  color: var(--texto);
+  font: inherit;
+  cursor: pointer;
+}
+.abas button.ativo { border-bottom: 4px solid var(--verde); font-weight: bold; color: var(--verde); }
+
+.painel { display: none; padding-top: 1rem; }
+.painel.ativo { display: block; }
+
+/* Carrossel */
+.carrossel { position: relative; }
+.slide { display: none; position: relative; }
+.slide.ativo { display: block; }
+.slide img { width: 100%; aspect-ratio: 12 / 5; object-fit: cover; border-radius: .5rem; }
+.slide p {
+  position: absolute; left: 1rem; right: 1rem; bottom: 1rem; margin: 0;
+  padding: .5rem 1rem;
+  background: rgba(11, 37, 69, .85);
+  color: #fff;
+  border-radius: .4rem;
+  text-align: center;
+}
+.carrossel .anterior, .carrossel .proximo {
+  position: absolute; top: 40%;
+  width: 2.5rem; height: 2.5rem;
+  border: none; border-radius: 50%;
+  background: var(--ambar); color: var(--marinho);
+  font-size: 1.2rem; cursor: pointer;
+}
+.carrossel .anterior { left: .5rem; }
+.carrossel .proximo  { right: .5rem; }
+
+/* FormulÃ¡rios */
+.campo { margin-bottom: 1rem; }
+.campo label { display: block; margin-bottom: .25rem; }
+.campo input, .campo textarea {
+  width: 100%; box-sizing: border-box;
+  padding: .5rem;
+  border: 1px solid var(--borda); border-radius: .4rem;
+  background: var(--fundo); color: var(--texto);
+  font: inherit;
+}
+.erro { display: none; color: #b02a37; font-size: .9rem; }
+[data-tema="escuro"] .erro { color: #ea868f; }
+
+/* Depois do primeiro envio, campos invÃ¡lidos mostram o erro */
+.validado :invalid { border-color: #b02a37; }
+.validado :invalid + .erro { display: block; }
+
+.aviso { margin-top: 1rem; padding: .75rem; border-radius: .4rem; }
+.aviso.ok   { background: #d1e7dd; color: #0a3622; }
+.aviso.erro-geral { background: #f8d7da; color: #58151c; }
+
+
+/* ---------- 5. PARTES DA PÃGINA ---------- */
+
+/* Topo e menu */
+.topo { background: var(--marinho); border-bottom: 3px solid var(--ambar); color: #fff; }
+.topo .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; padding-top: .75rem; padding-bottom: .75rem; }
+.topo a { color: #fff; text-decoration: none; margin-left: 1rem; }
+.topo a:hover { color: var(--ambar); }
+.topo .marca { font-weight: bold; font-size: 1.25rem; margin-left: 0; }
+.marca span { color: var(--ambar); }
+#botao-menu { display: none; color: #fff; border-color: #fff; }
+
+/* Barra de acessibilidade */
+.acessibilidade { background: var(--fundo-2); border-bottom: 1px solid var(--borda); padding: .5rem 0; }
+.acessibilidade .container { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+
+/* InÃ­cio */
+.inicio { background: var(--marinho); color: #fff; padding: 4rem 0; }
+.inicio h1 { font-size: 2.5rem; margin: 0 0 .5rem; }
+.inicio p { font-size: 1.25rem; }
+
+/* RodapÃ© */
+.rodape { background: var(--marinho); border-top: 3px solid var(--ambar); color: #fff; padding: 1.5rem 0; }
+.rodape .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+.rodape a { color: #fff; }
+
+/* Celular: o menu vira um botÃ£o */
+@media (max-width: 700px) {
+  #botao-menu { display: inline-block; }
+  .topo nav { display: none; width: 100%; }
+  .topo nav.aberto { display: block; }
+  .topo nav a { display: block; margin: 0; padding: .4rem 0; }
+  .inicio h1 { font-size: 2rem; }
+}

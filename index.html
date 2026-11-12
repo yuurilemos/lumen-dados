@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumen Dados</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOPO E MENU -->
+  <header class="topo">
+    <div class="container">
+      <a class="marca" href="#inicio">Lumen <span>Dados</span></a>
+      <button class="botao pequeno" id="botao-menu" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav id="menu" aria-label="Menu principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#metodo">Método</a>
+        <a href="#pesquisa">Pesquisa</a>
+        <a href="#contato">Contato</a>
+        <a href="login.html">Entrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BARRA DE ACESSIBILIDADE -->
+  <div class="acessibilidade">
+    <div class="container">
+      <strong>Acessibilidade:</strong>
+      <button class="botao pequeno" id="botao-tema">Modo escuro</button>
+      <button class="botao pequeno" id="fonte-menor" aria-label="Diminuir fonte">A-</button>
+      <button class="botao pequeno" id="fonte-maior" aria-label="Aumentar fonte">A+</button>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- INÍCIO -->
+    <section class="inicio" id="inicio">
+      <div class="container">
+        <h1>Dados que iluminam decisões</h1>
+        <p>Pipelines, dashboards e governança de dados para a sua empresa.</p>
+        <a class="botao ambar grande" href="#contato">Fale com a gente</a>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS (cartões) -->
+    <section class="secao" id="servicos">
+      <div class="container">
+        <h2>Serviços</h2>
+        <div class="linha">
+          <div class="cartao">
+            <h3>Pipelines de dados</h3>
+            <p>Coleta, tratamento e carga automática de dados.</p>
+          </div>
+          <div class="cartao">
+            <h3>Dashboards</h3>
+            <p>Painéis claros para acompanhar os números do negócio.</p>
+          </div>
+          <div class="cartao">
+            <h3>Governança</h3>
+            <p>Segurança e adequação à LGPD.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO (cartões explicativos) -->
+    <section class="secao cinza" id="metodo">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <div class="linha">
+          <div class="cartao passo">
+            <h3>1. Diagnóstico</h3>
+            <p>Entendemos o problema e onde estão os dados.</p>
+          </div>
+          <div class="cartao passo">
+            <h3>2. Construção</h3>
+            <p>Criamos o pipeline e os painéis em etapas curtas.</p>
+          </div>
+          <div class="cartao passo">
+            <h3>3. Acompanhamento</h3>
+            <p>Monitoramos e treinamos a sua equipe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PESQUISA (abas) -->
+    <section class="secao" id="pesquisa">
+      <div class="container">
+        <h2>Pesquisa</h2>
+
+        <div class="campo">
+          <label for="busca">Pesquisar na aba atual</label>
+          <input id="busca" type="search" placeholder="Ex.: pipeline">
+        </div>
+        <p id="resultado" aria-live="polite"></p>
+
+        <div class="abas" role="tablist">
+          <button class="ativo" role="tab" aria-selected="true"  data-painel="aba-servicos">Serviços</button>
+          <button              role="tab" aria-selected="false" data-painel="aba-cases">Cases</button>
+          <button              role="tab" aria-selected="false" data-painel="aba-artigos">Artigos</button>
+        </div>
+
+        <div class="painel ativo" id="aba-servicos" role="tabpanel">
+          <div class="linha">
+            <div class="cartao item"><h3>Pipelines em Python</h3>Automação de coleta e carga.</div>
+            <div class="cartao item"><h3>Dashboards executivos</h3>Indicadores fáceis de ler.</div>
+          </div>
+        </div>
+
+        <div class="painel" id="aba-cases" role="tabpanel">
+          <div class="linha">
+            <div class="cartao item"><h3>Varejo</h3>Estoque integrado com previsão de demanda.</div>
+            <div class="cartao item"><h3>Finanças</h3>Pipeline com dados do Banco Central.</div>
+          </div>
+        </div>
+
+        <div class="painel" id="aba-artigos" role="tabpanel">
+          <div class="linha">
+            <div class="cartao item"><h3>Qualidade de dados</h3>Cinco testes para todo pipeline.</div>
+            <div class="cartao item"><h3>Cores acessíveis</h3>Contraste em dashboards.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTAQUES (carrossel) -->
+    <section class="secao cinza">
+      <div class="container">
+        <h2>Destaques</h2>
+        <div class="carrossel" aria-label="Destaques">
+          <div class="slide ativo">
+            <img src="img/slide1.svg" alt="Fluxo de dados: fontes, ingestão, transformação e dashboard">
+            <p>Pipelines que não quebram</p>
+          </div>
+          <div class="slide">
+            <img src="img/slide2.svg" alt="Gráfico de barras em crescimento">
+            <p>Resultados mensuráveis</p>
+          </div>
+          <div class="slide">
+            <img src="img/slide3.svg" alt="Rede de nós conectados">
+            <p>Tudo integrado</p>
+          </div>
+          <button class="anterior" aria-label="Slide anterior">&#8249;</button>
+          <button class="proximo" aria-label="Próximo slide">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO (formulário) -->
+    <section class="secao" id="contato">
+      <div class="container estreito">
+        <h2>Contato</h2>
+        <form data-sucesso="Mensagem enviada! (demonstração, nada é enviado a um servidor)" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" required>
+            <span class="erro">Informe seu nome.</span>
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" required>
+            <span class="erro">Informe um e-mail válido.</span>
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" rows="4" required minlength="10"></textarea>
+            <span class="erro">Escreva pelo menos 10 caracteres.</span>
+          </div>
+          <button class="botao verde" type="submit">Enviar</button>
+          <div class="aviso" role="status"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="container">
+      <span>© 2026 Lumen Dados (empresa fictícia, projeto acadêmico)</span>
+      <span><a href="login.html">Entrar</a> · <a href="https://github.com/yuurilemos">GitHub</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
