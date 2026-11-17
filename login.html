@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar - Lumen Dados</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container">
+      <a class="marca" href="index.html">Lumen <span>Dados</span></a>
+      <a class="botao ambar pequeno" href="index.html">Voltar ao site</a>
+    </div>
+  </header>
+
+  <main class="secao">
+    <div class="container estreito">
+      <h1>Entrar</h1>
+      <form data-sucesso="Login simulado com sucesso (protótipo)." novalidate>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" required>
+          <span class="erro">Informe um e-mail válido.</span>
+        </div>
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" required minlength="8">
+          <span class="erro">A senha precisa ter pelo menos 8 caracteres.</span>
+        </div>
+        <button class="botao verde" type="submit">Entrar</button>
+        <div class="aviso" role="status"></div>
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
