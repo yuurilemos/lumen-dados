@@ -4,15 +4,14 @@ Site de uma empresa fictícia de dados, feito para o Projeto Final de Desenvolvi
 
 ## Como rodar
 
-Baixe a pasta e abra o arquivo `index.html` no navegador. Não precisa de servidor nem de instalação. Para publicar de graça, ative o GitHub Pages no repositório (Settings, Pages, branch main).
-
-## Arquivos
+Baixe a pasta e abra o arquivo `index.html` no navegador. Não precisa de servidor nem de instalação. Para acessar o site diretamente entre por : https://yuurilemos.github.io/lumen-dados/
+## Arquivos 
 
 ```
 index.html    página principal
 login.html    página de login
-estilo.css    cores, layout e componentes
-script.js     tema, fonte, menu, abas, pesquisa, carrossel e formulários
+css/style.css    cores, layout e componentes
+js/main.js     tema, fonte, menu, abas, pesquisa, carrossel e formulários
 img/          três ilustrações SVG do carrossel
 ```
 
@@ -24,7 +23,7 @@ Escolhi uma empresa fictícia de dados, a Lumen Dados. Defini três cores: azul-
 
 ### 2. Estrutura do CSS
 
-Em vez de usar uma biblioteca, escrevi no `estilo.css` os blocos que o Bootstrap oferece, em cinco partes:
+Em vez de usar uma biblioteca, escrevi no `style.css` os blocos que o Bootstrap oferece, em cinco partes:
 
 1. Cores: variáveis como `--marinho`, `--verde` e `--ambar`. O modo escuro só troca o valor das variáveis.
 2. Base: fonte, cores do texto e foco visível.
@@ -38,7 +37,7 @@ Montei a página em seções, nesta ordem: topo e menu, barra de acessibilidade,
 
 ### 4. JavaScript
 
-O `script.js` tem seis partes, cada uma com uma função curta:
+O `main.js` tem seis partes, cada uma com uma função curta:
 
 1. Acessibilidade: o botão de tema troca o atributo `data-tema` entre `claro` e `escuro`, e os botões A- e A+ mudam a variável `--fonte`.
 2. Menu: no celular, o botão abre e fecha o menu.
