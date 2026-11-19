@@ -20,7 +20,7 @@ img/          três ilustrações SVG do carrossel
 
 ### 1. Ideia e cores
 
-Escolhi uma empresa fictícia de dados, a Lumen Dados. Defini três cores: azul-marinho (confiança), verde-azulado (ação) e âmbar (destaque), e calculei o contraste de cada par texto/fundo com um script em Python.
+Escolhi uma empresa fictícia de dados, a Lumen Dados. Defini três cores: azul-marinho (confiança), verde-azulado (ação) e âmbar (destaque).
 
 ### 2. Estrutura do CSS
 
