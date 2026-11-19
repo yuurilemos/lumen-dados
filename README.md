@@ -53,4 +53,4 @@ Abri o site em tela de computador e de celular e testei o menu, as abas, a pesqu
 
 ## Créditos
 
-Ilustrações SVG feitas para este projeto. Estrutura de classes inspirada no Bootstrap. Apoio de IA (Claude, da Anthropic) declarado na Parte D do relatório.
+Ilustrações SVG feitas para este projeto. Estrutura de classes inspirada no Bootstrap. Apoio de IA (Claude, da Anthropic).
